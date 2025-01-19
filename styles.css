@@ -1,0 +1,89 @@
+/* I want a responsive page @media */
+
+body {
+  font-size: 100%;
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: 500, 700;
+  font-style: normal;
+  color: hsl(228, 12%, 48%);
+  background-color: rgb(250, 220, 215);
+  padding: 10% 20% 10% 20%;
+}
+#compo {
+  overflow: auto;
+  background-color: aliceblue;
+  display: flex; /* Use Flexbox to align items side by side */
+  width: 100%; /* Full width of the container */
+  height: 100%; /* Full height, or set to specific value */
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+#picture,
+#paragraph {
+  flex: 1;
+  box-sizing: border-box;
+  /* Flexbox inside each container for centering */
+  /* Horizontally center the content */
+  display: flex;
+  /* justify-content: center;     /* Horizontally center the content */
+  flex-direction: column;
+  justify-content: center;
+}
+
+#picture {
+  /* Image resizes to fit the container */
+  /* width: 100%; Image takes up the full width of the #picture container
+  height: 100%; Height adjusts to maintain aspect ratio */
+  object-fit: cover;
+}
+#paragraph {
+  padding: 10px; /* Adds some padding to the paragraph */
+  background-color: aliceblue;
+
+  /* Optional background color */
+}
+#header,
+#discounted {
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "SOFT" 0, "WONK" 0;
+  color: hsl(212, 21%, 14%);
+  font-size: 2em;
+}
+
+#discounted {
+  color: hsl(158, 36%, 37%);
+}
+
+#Button {
+  background-color: hsl(158, 36%, 37%);
+  padding: 0.5% 2% 0.5% 2%;
+  border-radius: 10px;
+  color: hsl(30, 38%, 92%);
+  font-family: "Montserrat", serif;
+}
+
+@media (max-width: 375px) {
+  #compo {
+    flex-direction: column;
+  }
+  #picture {
+    /* #paragraph { */
+    width: auto;
+  }
+}
+
+@media (min-width: 1440px) {
+  #compo {
+    flex-direction: rows;
+  }
+
+  #picture,
+  #paragraph {
+    width: 50%;
+  }
+}
